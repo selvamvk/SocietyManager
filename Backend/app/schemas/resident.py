@@ -14,11 +14,15 @@ class ResidentCreate(BaseModel):
 
 
 class ResidentUpdate(BaseModel):
+    resident_id: int | None = None
+    society_id: int
+    flat_no: str
+    block_name: str
     owner_name: str
     mobile_no: str
-    email: Optional[str] = None
-    occupancy_status: str
-    maintenance_amount: float
+    email: str | None = None
+    occupancy_status: str = "OWNER"
+    maintenance_amount: float = 2500
 
 
 class ResidentResponse(BaseModel):

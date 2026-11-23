@@ -1,4 +1,5 @@
 import api from "../api/api";
+import type { Resident } from "../interfaces/Resident";
 
 export const getResidents = (
     search = "",
@@ -15,5 +16,32 @@ export const deleteResident = (
 ) => {
     return api.delete(
         `/residents/${residentId}`
+    );
+};
+
+export const createResident = (
+    resident: Resident
+) => {
+    return api.post(
+        "/residents",
+        resident
+    );
+};
+
+export const getResidentById = (
+    residentId: number
+) => {
+    return api.get(
+        `/residents/${residentId}`
+    );
+};
+
+export const updateResident = (
+    residentId: number,
+    resident: any
+) => {
+    return api.put(
+        `/residents/${residentId}`,
+        resident
     );
 };

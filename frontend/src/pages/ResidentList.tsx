@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Resident } from "../interfaces/Resident";
+
 import {
     Box,
     Button,
@@ -20,7 +21,13 @@ import {
     deleteResident
 } from "../services/residentService";
 
+import {
+    useNavigate
+} from "react-router-dom";
+
 function ResidentList() {
+
+    const navigate = useNavigate();
 
     const [residents, setResidents] =
         useState<Resident[]>([]);
@@ -143,6 +150,16 @@ function ResidentList() {
                         Search
                     </Button>
 
+                    <Button
+                        variant="contained"
+                        color="success"
+                        onClick={() =>
+                            navigate("/add-resident")
+                        }
+                    >
+                        Add Resident
+                    </Button>
+
                 </Box>
 
             </Paper>
@@ -243,6 +260,20 @@ function ResidentList() {
                                         }
                                     >
                                         Delete
+                                    </Button>
+
+                                    <Button
+                                        size="small"
+                                        color="primary"
+                                        variant="outlined"
+                                        sx={{ mr: 1 }}
+                                        onClick={() =>
+                                            navigate(
+                                            `/edit-resident/${resident.resident_id}`
+                                            )
+                                        }
+                                    >
+                                        Edit
                                     </Button>
 
                                 </TableCell>

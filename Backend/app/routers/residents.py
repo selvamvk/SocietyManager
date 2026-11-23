@@ -66,6 +66,7 @@ def get_residents(
     "/{resident_id}",
     response_model=ResidentResponse
 )
+
 def get_resident_by_id(
     resident_id: int,
     db: Session = Depends(get_db)
