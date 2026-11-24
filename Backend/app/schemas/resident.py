@@ -33,6 +33,8 @@ class ResidentResponse(BaseModel):
     owner_name: str
     mobile_no: str
     email: Optional[str]
+    occupancy_status: str
+    maintenance_amount: float
 
     model_config = {
         "from_attributes": True

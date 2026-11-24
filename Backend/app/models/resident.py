@@ -79,6 +79,8 @@ class ResidentUpdate(BaseModel):
     email: Optional[str] = None
     occupancy_status: str
     maintenance_amount: float
+    occupancy_status: str
+    maintenance_amount: float
 
 class ResidentResponse(BaseModel):
 
@@ -89,6 +91,8 @@ class ResidentResponse(BaseModel):
     owner_name: str
     mobile_no: str
     email: Optional[str]
+    occupancy_status: str
+    maintenance_amount: float
 
     model_config = {
         "from_attributes": True

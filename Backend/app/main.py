@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import residents
+from app.routers import dashboard
 
 app = FastAPI(
     title="SocietyManager API",
@@ -19,6 +20,10 @@ app.add_middleware(
 
 app.include_router(
     residents.router
+)
+
+app.include_router(
+    dashboard.router
 )
 
 @app.get("/")

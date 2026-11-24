@@ -4,37 +4,49 @@ import {
     Navigate
 } from "react-router-dom";
 
+import Header from "./components/Header";
+
 import ResidentList from "./pages/ResidentList";
 import AddResident from "./pages/AddResident";
 import EditResident from "./pages/EditResident";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 
     return (
+        <>
 
-        <Routes>
+            <Header />
+        
+            <Routes>
 
-            <Route
-                path="/"
-                element={<ResidentList />}
-            />
+                <Route
+                    path="/"
+                    element={<ResidentList />}
+                />
 
-            <Route
-                path="/add-resident"
-                element={<AddResident />}
-            />
+                <Route
+                    path="/dashboard"
+                    element={<Dashboard />}
+                />
 
-            <Route
-                path="*"
-                element={<Navigate to="/" />}
-            />
+                <Route
+                    path="/add-resident"
+                    element={<AddResident />}
+                />
 
-            <Route
-                path="/edit-resident/:id"
-                element={<EditResident />}
-            />
+                <Route
+                    path="*"
+                    element={<Navigate to="/" />}
+                />
 
-        </Routes>
+                <Route
+                    path="/edit-resident/:id"
+                    element={<EditResident />}
+                />
+
+            </Routes>
+        </>
 
     );
 
