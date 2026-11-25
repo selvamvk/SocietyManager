@@ -82,8 +82,18 @@ function Header() {
 
                     <Button
                         color="inherit"
+                        onClick={() => navigate("/bills")}
                     >
                         Bills
+                    </Button>
+
+                    <Button
+                        color="inherit"
+                        onClick={() =>
+                            navigate("/generate-bills")
+                        }
+                    >
+                        Generate Bills
                     </Button>
 
                     <Button
